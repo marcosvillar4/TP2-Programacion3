@@ -1,5 +1,9 @@
 package Clases;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+
 public interface GrafoTDA {
 	public void InicializarGrafo();
 	public void AgregarVertice(int v);
@@ -8,5 +12,6 @@ public interface GrafoTDA {
 	public void EliminarArista(int v1, int v2);
 	public int PesoArista(int v1, int v2);
 	public boolean ExisteArista (int v1, int v2);
-	public ConjuntoTDA Vertices();
+	public ArrayList<Integer> Vertices();
+	public ArrayList<Integer> Vecindario(int nodo);
 }

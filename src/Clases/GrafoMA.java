@@ -1,6 +1,11 @@
 package Clases;
 
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
+
 public class GrafoMA implements GrafoTDA {
 	static int n = 100;
 	int[][] MAdy;
@@ -54,11 +59,10 @@ public class GrafoMA implements GrafoTDA {
 		int d = Vert2Indice(v2);
 		return(MAdy[o][d]);
 	}
-	public ConjuntoTDA Vertices() {
-		ConjuntoTDA Vert = new ConjuntoA();
-		Vert.InicializarConjunto();
+	public ArrayList<Integer> Vertices() {
+		ArrayList<Integer> Vert = new ArrayList<>();
 		for (int i=0;i<cantNodos;i++) {
-			Vert.Agregar(Etiqs[i]);
+			Vert.add(Etiqs[i]);
 		}
 		return Vert;
 	}
@@ -66,5 +70,17 @@ public class GrafoMA implements GrafoTDA {
 		int o = Vert2Indice(v1);
 		int d = Vert2Indice(v2);
 		return(MAdy[o][d]!=0);
+	}
+
+	public ArrayList<Integer> Vecindario(int nodo){
+		ArrayList<Integer> resp = new ArrayList<>();
+		for (Integer vertex : Vertices()) {
+			if (nodo != vertex){
+				if (ExisteArista(nodo, vertex)){
+					resp.add(vertex);
+				}
+			}
+		}
+		return resp;
 	}
 }
