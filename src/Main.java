@@ -60,8 +60,9 @@ public class Main {
             }
 
             int[] centros = {0,0,0,0,0,0,0,0};
+            int minU = Integer.MAX_VALUE;
 
-            System.out.println(Arrays.toString(calc.calcMin(m, costosConst, centros, 0)));
+            System.out.println(Arrays.toString(calc.calcMin(m, costosConst, centros, 0, minU)));
 
 
             /*//Matriz con el camino de los Clientes a los CD
