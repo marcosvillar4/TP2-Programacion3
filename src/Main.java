@@ -20,8 +20,16 @@ public class Main {
     public static void main(String[] args) {
         try (BufferedReader br = new BufferedReader(new FileReader("src/rutas.txt"))) {
             String line = br.readLine();
+
+            ///////////////////////////////////////////////////////////////////////
+
             GrafoTDA g = new GrafoMA();
             g.InicializarGrafo();
+
+
+
+
+
 
             //Llena el grafo con los vertices
             while (line != null) {
@@ -41,16 +49,31 @@ public class Main {
                 line = br2.readLine();
             }
 
+            /*for (Integer vertex : g.Vertices()) {
+                for (Integer i : g.Vertices()) {
+                    if (g.ExisteArista(vertex, i)) {
+                        System.out.println(vertex + " -----> " + i + ": " + g.PesoArista(vertex, i));
+                    }
+                }
+
+            }*/
+
+            ////////////////////////////////////////////////////////////////////////////////
+
+
+
             //Matriz con el camino de los Clientes a los CD
             int [][] m = new int[7][50];
             GrafoTDA g2 = new GrafoMA();
-            dijkstra d = new dijkstra();
+
             for(int i = 0; i < m.length; i++){
-                g2 = d.dijkstraFunc(g, i + 50);
+                g2 = dijkstra.dijkstraFunc(g, i + 50);
                 for (int j = 0; j < m[i].length; j++){
                     m[i][j] = g2.PesoArista(i+50,j);
                 }
             }
+
+
 
             for(int i = 0; i < m.length; i++){
                 for(int j = 0; j < m[i].length; j++){
