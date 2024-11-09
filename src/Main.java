@@ -48,12 +48,10 @@ public class Main {
 
             for (int vertex = 0; vertex < 50; vertex++) {
                 for (int i = 0; i < 7; i++) {
-                    System.out.println(vertex+1 + " ----> " + (i + 50) + ": " + (dijkstra.dijkstraDirCost(g, vertex, 50+i) + costoEnvioPuerto[i]) * 10);
                     m[vertex][i] = dijkstra.dijkstraDirCost(g, vertex,50 + i) * 10 + costoEnvioPuerto[i] ;
                 }
             }
 
-            System.out.println(dijkstra.dijkstraDirCost(g, 0, 50));
 
             for (int[] ints : m) {
                 System.out.println(Arrays.toString(ints));

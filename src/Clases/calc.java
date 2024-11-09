@@ -62,13 +62,19 @@ public class calc {
                     min = ints[i];
                 }
             }
-            u = u + 1;
+            if (min != MAX_VALUE) {
+                u = u + min;
+            }
         }
 
         for (int i = 0; i < cc.length; i++) {
             if (centros[i] == 1){
                 u = u + cc[i];
             }
+        }
+
+        if (u == 0){
+            return MAX_VALUE;
         }
 
         return u;
@@ -86,7 +92,9 @@ public class calc {
                     min = ints[i];
                 }
             }
-            c = c + 1;
+            if (min != MAX_VALUE) {
+                c = c + min;
+            }
         }
 
         for (int i = 0; i < cc.length; i++) {
