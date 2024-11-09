@@ -1,7 +1,5 @@
 package Clases;
 
-import java.util.Arrays;
-
 import static java.lang.Integer.MAX_VALUE;
 
 public class calc {
@@ -10,7 +8,7 @@ public class calc {
         if(puntero >= centros.length){
             return centros;
         } else {
-            int c = calcC(m, cc, centros);
+
             int u = calcU(m, cc, centros);
 
             int[] branch1 = centros.clone();
@@ -32,23 +30,6 @@ public class calc {
                 }
             }
         }
-
-//        int c = calcC(m, cc, centros);
-//        int u = calcU(m, cc, centros);
-//
-//        if (c < u) {
-//            int[] branch1 = centros;
-//            int[] branch2 = centros;
-//
-//            branch1[puntero] = 1;
-//            branch2[puntero] = -1;
-//
-//            if (branch1.length < puntero) {
-//                centros = calcMin(m, cc, branch1, puntero + 1);
-//                centros = calcMin(m, cc, branch2, puntero + 1);
-//            }
-//        }
-//        return centros;
     }
 
     static int calcU(int[][] m, int[] cc, int[] centros){
