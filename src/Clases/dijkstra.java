@@ -57,4 +57,8 @@ public class dijkstra {
 
         return resp;
     }
+
+    public static int dijkstraDirCost(GrafoTDA g, int nodo1, int nodo2){
+        return dijkstraFunc(g, nodo1).PesoArista(nodo1,nodo2);
+    }
 }
