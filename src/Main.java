@@ -31,15 +31,15 @@ public class Main {
 
             ////////////////////////////////////////////////////////////////////////////////
 
-            int[][] m = new int[50][7];
+            int[][] m = new int[50][8];
             int[] costosConst = {2300, 1900, 1500, 2000, 2700, 2500, 3000, 500};
             int[] costoEnvioPuerto = {3, 3, 3, 2, 2, 2, 1, 1};
 
             int volumenEnvio = 10;
 
             for (int vertex = 0; vertex < 50; vertex++) {
-                for (int i = 0; i < 7; i++) {
-                    m[vertex][i] = dijkstra.dijkstraDirCost(g, vertex,50 + i) * volumenEnvio + costoEnvioPuerto[i] ;
+                for (int i = 0; i < 8; i++) {
+                    m[vertex][i] = (dijkstra.dijkstraDirCost(g, vertex,50 + i) + costoEnvioPuerto[i]) * volumenEnvio  ;
                 }
             }
 
